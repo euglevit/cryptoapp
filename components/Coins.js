@@ -12,8 +12,13 @@ class Coins extends Component {
     {type: 'MAT', price: 103.45, difference: 1.20},
   ]
 
+  componentDidMount(){
+    console.log('component mounted');
+  }
+  
   createCoinList(){
     this.coins.map(coin => {
+      console.log(coin.type);
       return(
         <CoinInfo 
           coinType={coin.type} 
@@ -25,6 +30,7 @@ class Coins extends Component {
   }
       
   render(){
+    console.log('yo');
     return(
       <View style={styles.container} >{this.createCoinList()}</View>
     )
